@@ -1,6 +1,7 @@
 // UI VARS
 displayContainer = document.getElementById('display-container')
 form = document.getElementById('search-form')
+message = document.getElementById('confirmation-message')
 searchInput = document.getElementById('search-input')
 let searchValue
 let currentSearch
@@ -17,6 +18,10 @@ function updateInput(e) {
 }
 
 // FUNCTIONS
+
+function clear() {
+    displayContainer.innerHTML = '';
+}
 
 // fetch and parse data from URL
 async function fetchApi(url) {
@@ -67,6 +72,7 @@ async function getBeers() {
 
 // find beer from search input
 async function searchBeer(search) {
+    clear()
     const data = await fetchApi(`https://api.punkapi.com/v2/beers?beer_name=${search}`)
     // data.forEach(beer => {
     //     // console.log(beer);
@@ -81,7 +87,15 @@ async function searchBeer(search) {
     //     <button class="recipe-btn" id="recipe-btn">Get Recipe</button>`
     //     beerContainer.appendChild(beers)
     // })
-    displayData(data);
+
+    // return message to user to confirm succesful search or not 
+    const count = data.length
+    if (data.length > 0) {
+        displayData(data)
+        message.innerHTML = `{${count}} matches found for : "${searchValue}"`
+    } else {
+        message.innerHTML = `{${count}} matches found for : "${searchValue}"`
+    }
 }
 
 getBeers()
