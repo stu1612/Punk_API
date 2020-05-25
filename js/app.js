@@ -101,12 +101,24 @@ async function getBeerById(beerID) {
 
 // returns all data from specific beer ID
 function addBeerToDOM(beer) {
-    const beerRecipe = document.createElement('div')
-    beerRecipe.classList.add('beer-recipe')
-    beerRecipe.innerHTML = `hello`
-    recipeIdContainer.appendChild(beerRecipe)
+    // remove display and form containers
     displayContainer.style.display = 'none';
     form.style.display = 'none'
+    // generate new div
+    const beerRecipe = document.createElement('div')
+    beerRecipe.classList.add('beer-recipe')
+    beerRecipe.innerHTML = `
+    <h2>Recipe</h2>
+    <button class="delete-btn">Delete</button>`
+    recipeIdContainer.addEventListener('click', (e) => {
+        if (e.target.value = 'delete-btn') {
+            beerRecipe.style.display = 'none'
+            displayContainer.style.display = 'grid';
+            form.style.display = 'block'
+        }
+    })
+    recipeIdContainer.appendChild(beerRecipe)
+
     console.log(beer)
 }
 
