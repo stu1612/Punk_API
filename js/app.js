@@ -1,5 +1,5 @@
 // UI VARS
-beerContainer = document.getElementById('beer-container')
+displayContainer = document.getElementById('display-container')
 form = document.getElementById('search-form')
 searchInput = document.getElementById('search-input')
 let searchValue
@@ -42,7 +42,7 @@ function displayData(data) {
         <p class="primary-text">${beer.abv} %</p>
         <p class="number-text">${beer.id}</p>
         <button class="recipe-btn" id="recipe-btn">Get Recipe</button>`
-        beerContainer.appendChild(beers)
+        displayContainer.appendChild(beers)
     })
 }
 
