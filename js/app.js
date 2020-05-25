@@ -24,7 +24,7 @@ function updateInput(e) {
 displayContainer.addEventListener('click', (e) => {
     const beerInfo = e.path.find(item => {
         if (item.classList) {
-            return item.classList.contains('recipe-btn')
+            return item.classList.contains('beers')
         } else {
             return false
         }
@@ -101,15 +101,37 @@ async function getBeerById(beerID) {
 
 // returns all data from specific beer ID
 function addBeerToDOM(beer) {
+    console.log(beer)
     // remove display and form containers
     displayContainer.style.display = 'none';
     form.style.display = 'none'
+    // set array methods
+    const hops = []
+
+    for (let i = 0; i < 100; i++) {
+        if (beer[`ingredients.hops${i}`]) {
+            hops.push(`${beer[`ingredients.hops.name${i}`]} - ${beer[`ingredients.hops.amount.value${i}`]} ${beer[`ingredients.hops.amount.unit${i}`]} (add : ${beer[`ingredients.hops.add${i}`]} | attribute:  ${beer[`ingredients.hops.attribute${i}`]})`);
+        } else {
+            break
+        }
+    }
     // generate new div
     const beerRecipe = document.createElement('div')
     beerRecipe.classList.add('beer-recipe')
+
+
+
     beerRecipe.innerHTML = `
-    <h2>Recipe</h2>
-    <button class="delete-btn">Delete</button>`
+    <h2>${beer.name}</h2>
+    <button class="delete-btn">Delete</button>
+    <ul>
+        ${hops.map(hop => `<li>${hop}`).join('')}
+    </ul>
+    `
+
+
+
+
     recipeIdContainer.addEventListener('click', (e) => {
         if (e.target.value = 'delete-btn') {
             beerRecipe.style.display = 'none'
@@ -119,7 +141,7 @@ function addBeerToDOM(beer) {
     })
     recipeIdContainer.appendChild(beerRecipe)
 
-    console.log(beer)
+
 }
 
 getBeers()
