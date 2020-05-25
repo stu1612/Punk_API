@@ -1,9 +1,11 @@
 // Config files - vars / func / mixins
-
+@import 'abstracts/colors';
+@import 'abstracts/type';
 // Vendor - vendor prefixes
 
 // Base styles - fonts / typography / base
-
+@import 'base/base';
+@import 'base/typography';
 // Layout
 
 // Componenets - buttons / CTA
