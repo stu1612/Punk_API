@@ -1,0 +1,19 @@
+.h1-heading {
+    @include main_heading(black, 100, 8vw);
+}
+
+.h2-heading {
+    @include main_heading(black, 500, 4rem);
+}
+
+.h3-heading {
+    @include main_heading(black, 500, 4rem);
+}
+
+.h4-heading {
+    @include main_heading(black, 500, 2rem);
+}
+
+input {
+    @include main_heading(black, 400, 3rem)
+}

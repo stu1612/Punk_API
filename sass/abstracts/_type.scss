@@ -1,0 +1,15 @@
+// mixins
+
+@mixin flex ($flex-direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin main_heading ($color, $font-weight, $font-size) {
+    font-family: $main-heading;
+    color: $color;
+    font-weight: $font-weight;
+    font-size: $font-size;
+}

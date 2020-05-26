@@ -41,6 +41,7 @@ displayContainer.addEventListener('click', (e) => {
 
 function clear() {
     displayContainer.innerHTML = '';
+    searchInput.value = '';
 }
 
 // fetch and parse data from URL
@@ -63,11 +64,11 @@ function displayData(data) {
         beers.classList.add('beers')
         beers.setAttribute('data-recipeID', `${beer.id}`)
         beers.innerHTML = `
-        <h2>${beer.name.substring(0, 20)}</h2>
-        ${beer.image_url ? `<img src="${beer.image_url}"/>` : '<img src="./img/brewdog_logo.jpg" />'}
-        <p class="primary-text">${beer.abv} %</p>
-        <p class="number-text">${beer.id}</p>
-        <button class="recipe-btn" id="recipe-btn">Get Recipe</button>`
+        <h2 class="h2-heading">${beer.name.substring(0, 20)}</h2>
+            ${beer.image_url ? `<img src="${beer.image_url}"/>` : '<img src="./img/brewdog_logo.jpg" />'}
+                <p class="primary-font">${beer.abv} %</p>
+                <p class="number-font">${beer.id}</p>
+            <button class="recipe-btn" id="recipe-btn">get recipe</button>`
         displayContainer.appendChild(beers)
     })
 }
@@ -86,9 +87,9 @@ async function searchBeer(search) {
     const count = data.length
     if (data.length > 0) {
         displayData(data)
-        message.innerHTML = `{${count}} matches found for : "${searchValue}"`
+        message.innerHTML = `<h4 class="h4-heading">{${count}} matches found for : "${searchValue}"</h4>`
     } else {
-        message.innerHTML = `{${count}} matches found for : "${searchValue}"`
+        message.innerHTML = `<h4 class="h4-heading">{${count}} matches found for : "${searchValue}"</h4>`
     }
 }
 
@@ -120,31 +121,31 @@ function addBeerToDOM(beer) {
             </div>
             <div class="recipe-content"> 
                 <div class="recipe-details">   
-                    <h2 class="h2-heading">${ beer.name}</h2> <span>ABV : ${beer.abv}</span>
-                        <p class="recipe-text">Brewers Tips : ${beer.brewers_tips}</p>
-                        <p class="recipe-text">Description : ${beer.description}</p>
+                    <h3 class="h3-heading">${ beer.name}</h3> <span class="number-font">ABV : ${beer.abv}</span>
+                        <p class="recipe-font">Brewers Tips : ${beer.brewers_tips}</p>
+                        <p class="recipe-font">Description : ${beer.description}</p>
                 </div>
                 <div class="recipe-method">
-                    <h3 class="h3-heading">Fermentation</h3>
+                    <h4 class="h4-heading">Fermentation</h4>
                         <p>${fermentation.value} ${fermentation.unit}</p>
-                    <h3 class="h3-heading">Mash</h3>
+                    <h4 class="h4-heading">Mash</h4>
                         <p>${mash.temp.value} ${mash.temp.unit} @ ${mash.duration} mins</p>
                     <div class="method">
-                        <h3 class="h3-heading">Method</h3>
-                            <p class="recipe-text">Boil Volume : ${beer.boil_volume.value} ${beer.boil_volume.unit}</p>
-                            <p class="recipe-text">EBC : ${beer.ebc}</p>
-                            <p class="recipe-text">IBU : ${beer.ibu}</p>
-                            <p class="recipe-text">pH : ${beer.ph}</p>
-                            <p class="recipe-text">SRM : ${beer.srm}</p>
-                            <p class="recipe-text">Target FG : ${beer.target_fg}</p>
-                            <p class="recipe-text">Target OG : ${beer.target_og}</p>
-                            <p class="recipe-text">Volume : ${beer.volume.value} ${beer.volume.unit}</p>
+                        <h4 class="h4-heading">Method</h4>
+                            <p class="recipe-font">Boil Volume : ${beer.boil_volume.value} ${beer.boil_volume.unit}</p>
+                            <p class="recipe-font">EBC : ${beer.ebc}</p>
+                            <p class="recipe-font">IBU : ${beer.ibu}</p>
+                            <p class="recipe-font">pH : ${beer.ph}</p>
+                            <p class="recipe-font">SRM : ${beer.srm}</p>
+                            <p class="recipe-font">Target FG : ${beer.target_fg}</p>
+                            <p class="recipe-font">Target OG : ${beer.target_og}</p>
+                            <p class="recipe-font">Volume : ${beer.volume.value} ${beer.volume.unit}</p>
                     </div>
                     <div class="food-pairing">
-                        <h3 class="h3-heading">Food Pairing</h3>
-                            <p class="recipe-text">${beer.food_pairing[0]}</p>
-                            <p class="recipe-text">${beer.food_pairing[1]}</p>
-                            <p class="recipe-text">${beer.food_pairing[2]}</p>
+                        <h4 class="h4-heading">Food Pairing</h4>
+                            <p class="recipe-font">${beer.food_pairing[0]}</p>
+                            <p class="recipe-font">${beer.food_pairing[1]}</p>
+                            <p class="recipe-font">${beer.food_pairing[2]}</p>
                     </div>
                 </div>
 
@@ -182,7 +183,7 @@ function addBeerToDOM(beer) {
     yeastDiv.classList.add('yeast-div')
     yeastDiv.innerHTML = `
      <h3 class="h3-heading">Yeast</h3>
-        <p class="recipe-text">${beer.ingredients.yeast}</p>`
+        <p class="recipe-font">${beer.ingredients.yeast}</p>`
 
     // append ing divs to beerRecipe div
     beerRecipe.appendChild(hopsDiv)

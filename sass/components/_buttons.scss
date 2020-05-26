@@ -1,0 +1,13 @@
+.submit-btn {
+    @include main_heading(white, 300, 3rem);
+    padding: 1rem;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    background: black;
+    transition: .5s;
+}
+
+.submit-btn:hover {
+    @include main_heading(black, 300, 3rem);
+    background: white;
+}
