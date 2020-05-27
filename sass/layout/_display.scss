@@ -6,7 +6,21 @@
     grid-gap: 1rem;
 }
 
+.beers {
+    animation: opacity 1s ease-in-out;
+}
+
 // .recipe-image {
 //     width: 100%;
 //     height: 400px;
 // }
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

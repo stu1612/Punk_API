@@ -21,7 +21,34 @@ button {
     cursor: pointer;
 }
 
+// page loading
+.loader {
+    display: none;
+}
 
+.line {
+    height: 50px;
+    width: 10px;
+    background: black;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.line1 {
+    animation: loader .6s linear alternate-reverse infinite;
+}
+
+.line2 {
+    animation: loader .6s linear .2s alternate-reverse infinite;
+}
+
+.line3 {
+    animation: loader .6s linear .4s alternate-reverse infinite;
+}
+
+.line4 {
+    animation: loader .6s linear .6s alternate-reverse infinite;
+}
 
 // fonts
 $main-font: 'Major Mono Display',
@@ -34,3 +61,14 @@ $main-heading: 'Major Mono Display',
 monospace;
 $secondary-heading: 'Montserrat',
 sans-serif;
+
+// animations
+@keyframes loader {
+    from {
+        transform: scaleY(1);
+    }
+
+    to {
+        transform: scaleY(.3);
+    }
+}

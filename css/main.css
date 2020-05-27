@@ -19,6 +19,42 @@ button {
   cursor: pointer;
 }
 
+.loader {
+  display: none;
+}
+
+.line {
+  height: 50px;
+  width: 10px;
+  background: black;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.line1 {
+  animation: loader 0.6s linear alternate-reverse infinite;
+}
+
+.line2 {
+  animation: loader 0.6s linear 0.2s alternate-reverse infinite;
+}
+
+.line3 {
+  animation: loader 0.6s linear 0.4s alternate-reverse infinite;
+}
+
+.line4 {
+  animation: loader 0.6s linear 0.6s alternate-reverse infinite;
+}
+
+@keyframes loader {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0.3);
+  }
+}
 .h1-heading {
   font-family: "Major Mono Display", monospace;
   color: black;
@@ -61,6 +97,18 @@ input {
   grid-gap: 1rem;
 }
 
+.beers {
+  animation: opacity 1s ease-in-out;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 header {
   display: flex;
   flex-direction: column;
@@ -95,7 +143,7 @@ input {
 }
 
 input:focus {
-  border-radius: 0;
+  box-shadow: 0 0 15px #aeb7c0;
 }
 
 input[type=text] {

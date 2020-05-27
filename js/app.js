@@ -5,6 +5,7 @@ const form = document.getElementById('search-form')
 const message = document.getElementById('confirmation-message')
 const searchInput = document.getElementById('search-input')
 const beerRecipe = document.getElementById('beer-recipe')
+const loader = document.getElementById('loader')
 let searchValue
 let currentSearch
 
@@ -95,8 +96,8 @@ async function searchBeer(search) {
     // }, 2000)
     if (data.length > 0) {
         displayData(data)
-        message.innerHTML = `<h4 class="h4-heading">{${count}} matches found for : "${searchValue}"</h4>`
         message.style.opacity = '1';
+        message.innerHTML = `<h4 class="h4-heading">{${count}} matches found for : "${searchValue}"</h4>`
         setTimeout(() => {
             message.style.opacity = '0';
         }, 2000)
@@ -106,8 +107,8 @@ async function searchBeer(search) {
         setTimeout(() => {
             message.style.opacity = '0';
         }, 2000)
+        loader.style.display = 'flex'
         setTimeout(() => {
-            message.classList.add('loader');
             location.reload();
         }, 5000);
         // window.location.reload(false);
