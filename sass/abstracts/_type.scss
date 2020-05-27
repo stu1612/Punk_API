@@ -13,3 +13,32 @@
     font-weight: $font-weight;
     font-size: $font-size;
 }
+
+@mixin main_text ($color, $font-weight, $font-size) {
+    font-family: $secondary-font;
+    color: $color;
+    font-weight: $font-weight;
+    font-size: $font-size;
+}
+
+// animations
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes loader {
+    from {
+        transform: scaleY(1);
+    }
+
+    to {
+        transform: scaleY(.3);
+    }
+}

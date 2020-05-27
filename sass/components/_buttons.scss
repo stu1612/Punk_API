@@ -11,3 +11,20 @@
     @include main_heading(black, 300, 3rem);
     background: white;
 }
+
+.recipe-btn {
+    // font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: white;
+    text-transform: uppercase;
+    padding: 1rem;
+    background: black;
+    transition: .5s;
+}
+
+// animations
+.recipe-btn:hover {
+    background: white;
+    color: black;
+}

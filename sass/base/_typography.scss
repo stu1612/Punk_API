@@ -1,9 +1,11 @@
 .h1-heading {
-    @include main_heading(black, 100, 8vw);
+    @include main_heading(black, 800, 8vw);
 }
 
 .h2-heading {
-    @include main_heading(black, 500, 4rem);
+    @include main_heading(black, 100, 3.5rem);
+    height: 10rem;
+    width: 100%;
 }
 
 .h3-heading {
@@ -12,6 +14,10 @@
 
 .h4-heading {
     @include main_heading(black, 500, 2rem);
+}
+
+.primary-font {
+    @include main_text(black, 300, 1.5rem)
 }
 
 input {

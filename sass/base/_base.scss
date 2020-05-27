@@ -11,6 +11,14 @@
     font-size: 62.5%;
 }
 
+body {
+    // background-image: linear-gradient(to right, #434343 0%, black 100%);
+    background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+}
+
 input,
 button {
     border: 0;
@@ -29,7 +37,7 @@ button {
 .line {
     height: 50px;
     width: 10px;
-    background: black;
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
     margin: 5px;
     border-radius: 5px;
 }
@@ -61,14 +69,3 @@ $main-heading: 'Major Mono Display',
 monospace;
 $secondary-heading: 'Montserrat',
 sans-serif;
-
-// animations
-@keyframes loader {
-    from {
-        transform: scaleY(1);
-    }
-
-    to {
-        transform: scaleY(.3);
-    }
-}
