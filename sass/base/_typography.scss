@@ -15,5 +15,7 @@
 }
 
 input {
-    @include main_heading(black, 400, 3rem)
+    font-family: $alternate-font;
+    font-size: 3rem;
+    font-weight: 100;
 }

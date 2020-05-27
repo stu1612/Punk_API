@@ -44,6 +44,7 @@ function clear() {
     searchInput.value = '';
 }
 
+
 // fetch and parse data from URL
 async function fetchApi(url) {
     const dataFetch = await fetch(url, {
@@ -84,14 +85,37 @@ async function searchBeer(search) {
     clear()
     const data = await fetchApi(`https://api.punkapi.com/v2/beers?beer_name=${search}`)
     // return message to user to confirm succesful search or not 
+    // displayData(data)
     const count = data.length
+    // displayData(data)
+    // message.innerHTML = `<h4 class="h4-heading">{${count}} matches found for : "${searchValue}"</h4>`
+    // message.style.opacity = '1';
+    // setTimeout(() => {
+    //     message.style.opacity = '0';
+    // }, 2000)
     if (data.length > 0) {
         displayData(data)
         message.innerHTML = `<h4 class="h4-heading">{${count}} matches found for : "${searchValue}"</h4>`
+        message.style.opacity = '1';
+        setTimeout(() => {
+            message.style.opacity = '0';
+        }, 2000)
     } else {
         message.innerHTML = `<h4 class="h4-heading">{${count}} matches found for : "${searchValue}"</h4>`
+        message.style.opacity = '1';
+        setTimeout(() => {
+            message.style.opacity = '0';
+        }, 2000)
+        setTimeout(() => {
+            message.classList.add('loader');
+            location.reload();
+        }, 5000);
+        // window.location.reload(false);
     }
+
 }
+
+
 
 // returns beer from specific beer ID 
 async function getBeerById(beerID) {

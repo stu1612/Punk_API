@@ -14,18 +14,21 @@
 input,
 button {
     border: 0;
+    outline: 0;
 }
 
 button {
     cursor: pointer;
 }
 
+
+
 // fonts
 $main-font: 'Major Mono Display',
 monospace;
 $secondary-font: 'Montserrat',
 sans-serif;
-$num-font: 'Roboto',
+$alternate-font: 'Roboto',
 sans-serif;
 $main-heading: 'Major Mono Display',
 monospace;

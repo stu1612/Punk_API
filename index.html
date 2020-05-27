@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/main.css">
     <title>Punk API</title>
 </head>
@@ -11,10 +13,13 @@
 <header>
     <h1 class="h1-heading">Brew Dog</h1>
     <form class="search-form" id="search-form">
-        <input type="text" class="search-input" id="search-input">
-        <button class="submit-btn" id="submit-btn">Find</button>
+        <div class="input-wrapper">
+            <input type="text" class="search-input" id="search-input" maxlength="20" required>
+            <img class="search-icon" src="./img/search.png" alt="">
+        </div>
+        <!-- <button class="submit-btn" id="submit-btn">Find</button> -->
     </form>
-    <div class="confirmation-message" id="confirmation-message"></div>
+    <div class="confirmation-message loader" id="confirmation-message"></div>
 </header>
 <main>
     <div class="display-container" id="display-container"></div>
