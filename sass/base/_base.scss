@@ -10,8 +10,6 @@
 }
 
 body {
-    // background-image: linear-gradient(to right, #434343 0%, black 100%);
-    background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
     min-height: 100vh;
     height: auto;
     width: 100%;
@@ -38,6 +36,17 @@ button {
     background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
     margin: 5px;
     border-radius: 5px;
+}
+
+.test {
+    color: #ffc6c6;
+    color: #cae4ff;
+    color: #c4ffc4;
+    color: #ffffa6;
+    color: #ff91ff;
+    color: #ffc993;
+    color: #8a8aff;
+    color: #4fff4f;
 }
 
 .line1 {

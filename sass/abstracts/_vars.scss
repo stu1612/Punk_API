@@ -61,3 +61,13 @@ $silver: #DDDDDD;
         transform: scale(1.1);
     }
 }
+
+@keyframes cta_btn {
+    from {
+        transform: translateY(20px);
+    }
+
+    to {
+        transform: translateY(0px);
+    }
+}

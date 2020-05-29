@@ -7,8 +7,9 @@
     -webkit-text-stroke: .3rem;
 }
 
-.header-text {
-    @include text(black, 400, 2rem);
+.heading_2 {
+    @include heading($black, 500, 3rem);
+    text-transform: uppercase;
 }
 
 input {

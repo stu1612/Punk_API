@@ -13,14 +13,22 @@
 }
 
 .recipe-btn {
-    // font-family: 'Roboto', sans-serif;
     font-family: 'poppins', sans-serif;
     font-size: 2rem;
     color: white;
     text-transform: uppercase;
     padding: 1rem;
-    background: black;
+    background: $dark;
+    opacity: 0.7;
     transition: .5s;
+    width: 100%;
+    opacity: 0;
+    transition: .3s;
+}
+
+.beers:hover>.recipe-btn {
+    opacity: 1;
+    animation: cta_btn .3s linear alternate;
 }
 
 // animations

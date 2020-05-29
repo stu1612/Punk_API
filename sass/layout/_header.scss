@@ -33,11 +33,16 @@ form {
 
 input {
     padding: 1rem;
-    background-color: $light;
+    background-color: rgb(223, 215, 215);
     border-radius: 30px;
-    // box-shadow: 0 0 10px rgb(210, 211, 212);
     transition: 0.5s;
     width: 100%;
+    transition: .5s;
+}
+
+input:hover,
+input:focus {
+    background-color: $white;
 }
 
 .input-wrapper {

@@ -38,13 +38,28 @@ displayContainer.addEventListener('click', (e) => {
     }
 });
 
-// FUNCTIONS
+displayContainer.addEventListener('mouseover', (e) => {
+    if (e.target.classList.value === 'beers') {
+        const divTarget = e.target;
+        const colours = ['#ffc6c6', '#cae4ff', '#c4ffc4', '#ffffa6', '#ff91ff', '#ffc993', '#8a8aff', '#4fff4f']
+        let newColor = Math.floor(Math.random() * colours.length)
+        divTarget.style.backgroundColor = colours[newColor]
+        console.log(divTarget);
+    }
+})
 
+displayContainer.addEventListener('mouseout', (e) => {
+    if (e.target.classList.value === 'beers') {
+        const divTarget = e.target;
+        divTarget.style.backgroundColor = 'white'
+    }
+})
+
+// FUNCTIONS
 function clear() {
     displayContainer.innerHTML = '';
     searchInput.value = '';
 }
-
 
 // fetch and parse data from URL
 async function fetchApi(url) {
@@ -55,6 +70,7 @@ async function fetchApi(url) {
         }
     });
     const data = await dataFetch.json();
+    console.log(data);
     return data;
 }
 
@@ -66,7 +82,7 @@ function displayData(data) {
         beers.classList.add('beers')
         beers.setAttribute('data-recipeID', `${beer.id}`)
         beers.innerHTML = `
-        <h2 class="h2-heading">${beer.name.substring(0, 20)}</h2>
+        <h2 class="heading_2">${beer.name.substring(0, 20)}</h2>
             ${beer.image_url ? `<img src="${beer.image_url}"/>` : '<img src="./img/brewdog_logo.jpg" />'}
                 <p class="primary-font">${beer.abv} %</p>
                 <p class="number-font">${beer.id}</p>
@@ -87,7 +103,6 @@ async function searchBeer(search) {
     const data = await fetchApi(`https://api.punkapi.com/v2/beers?beer_name=${search}`)
     // return message to user to confirm succesful search or not 
     const count = data.length
-
 
     if (data.length > 0) {
         displayData(data)
@@ -111,15 +126,12 @@ async function searchBeer(search) {
 
 }
 
-
-
 // returns beer from specific beer ID 
 async function getBeerById(beerID) {
     const data = await fetchApi(`https://api.punkapi.com/v2/beers?ids=${beerID}`)
     const beer = data[0]
     addBeerToDOM(beer)
 }
-
 
 // returns all data from specific beer ID
 function addBeerToDOM(beer) {
@@ -218,8 +230,5 @@ function addBeerToDOM(beer) {
         }
     })
     // recipeIdContainer.appendChild(beerRecipe)
-
-
 }
-
 getBeers()
