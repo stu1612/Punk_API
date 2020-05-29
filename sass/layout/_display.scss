@@ -25,3 +25,14 @@
     width: 30%;
     height: 20rem;
 }
+
+@media screen and (max-width: 650px) {
+    .display-container {
+        @include flex(column, center, center);
+        width: 95%;
+    }
+
+    .beers {
+        height: 90vh;
+    }
+}

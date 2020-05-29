@@ -86,18 +86,12 @@ async function searchBeer(search) {
     clear()
     const data = await fetchApi(`https://api.punkapi.com/v2/beers?beer_name=${search}`)
     // return message to user to confirm succesful search or not 
-    // displayData(data)
     const count = data.length
-    // displayData(data)
-    // message.innerHTML = `<h4 class="h4-heading">{${count}} matches found for : "${searchValue}"</h4>`
-    // message.style.opacity = '1';
-    // setTimeout(() => {
-    //     message.style.opacity = '0';
-    // }, 2000)
+
+
     if (data.length > 0) {
         displayData(data)
         message.style.opacity = '1'
-        message.style.color = 'white'
         message.innerHTML = `<h4 class="h4-heading">{${count}} matches found for : "${searchValue}"</h4>`
         setTimeout(() => {
             message.style.opacity = '0'
@@ -105,7 +99,6 @@ async function searchBeer(search) {
     } else {
         message.innerHTML = `<h4 class="h4-heading">{${count}} matches found for : "${searchValue}"</h4>`
         message.style.opacity = '1'
-        message.style.color = 'white'
         setTimeout(() => {
             message.style.opacity = '0'
         }, 2000)

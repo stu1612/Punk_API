@@ -1,27 +1,16 @@
-.h1-heading {
-    @include main_heading(black, 800, 8vw);
+// font mixin var - color / f_weight / f_size 
+.heading_1 {
+    @include heading($white, 900, calc(10rem + 5vw));
+    text-shadow: 3px 6px black;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-text-stroke: .3rem;
 }
 
-.h2-heading {
-    @include main_heading(black, 100, 3.5rem);
-    height: 10rem;
-    width: 100%;
-}
-
-.h3-heading {
-    @include main_heading(black, 500, 4rem);
-}
-
-.h4-heading {
-    @include main_heading(black, 500, 2rem);
-}
-
-.primary-font {
-    @include main_text(black, 300, 1.5rem)
+.header-text {
+    @include text(black, 400, 2rem);
 }
 
 input {
-    font-family: $alternate-font;
-    font-size: 3rem;
-    font-weight: 100;
+    @include text(black, 400, 2rem);
 }

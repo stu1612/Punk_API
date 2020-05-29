@@ -11,22 +11,29 @@
 </head>
 
 <header>
-    <h1 class="h1-heading">Brew Dog</h1>
-    <form class="search-form" id="search-form">
-        <div class="input-wrapper">
-            <input type="text" class="search-input" id="search-input" maxlength="20" required>
-            <img class="search-icon" src="./img/search.png" alt="">
-        </div>
-        <!-- <button class="submit-btn" id="submit-btn">Find</button> -->
-    </form>
-    <div class="confirmation-message" id="confirmation-message"></div>
+    <div class="header-img">
+        <img src="https://fabrikbrands.com/wp-content/uploads/BrewDog-1.jpg" alt="">
+    </div>
+    <div class="header-content">
+        <h1 class="heading_1">Brew Dog</h1>
+        <form class="search-form" id="search-form">
+            <div class="input-wrapper">
+                <input type="text" class="search-input" id="search-input" maxlength="25" required>
+                <img class="search-icon" src="./img/search.png" alt="">
+            </div>
+        </form>
+    </div>
+</header>
+
+<div class="confirmation-message" id="confirmation-message">
     <div class="loader" id="loader">
         <div class="line line1"></div>
         <div class="line line2"></div>
         <div class="line line3"></div>
         <div class="line line4"></div>
     </div>
-</header>
+</div>
+
 <main>
     <div class="display-container" id="display-container"></div>
     <div class="recipeID-container" id="recipeID-container">

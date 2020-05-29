@@ -1,5 +1,5 @@
 .submit-btn {
-    @include main_heading(white, 300, 3rem);
+    @include heading(white, 300, 3rem);
     padding: 1rem;
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
@@ -8,13 +8,13 @@
 }
 
 .submit-btn:hover {
-    @include main_heading(black, 300, 3rem);
+    @include heading(black, 300, 3rem);
     background: white;
 }
 
 .recipe-btn {
     // font-family: 'Roboto', sans-serif;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'poppins', sans-serif;
     font-size: 2rem;
     color: white;
     text-transform: uppercase;
