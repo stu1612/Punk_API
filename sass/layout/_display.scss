@@ -15,11 +15,13 @@
     text-align: center;
     position: relative;
     border-bottom: 1px solid $silver;
+    position: relative;
 }
 
 .beers img {
     width: 35%;
     height: 22rem;
+    pointer-events: none;
 }
 
 .white {

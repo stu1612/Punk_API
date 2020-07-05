@@ -38,13 +38,15 @@ displayContainer.addEventListener('click', (e) => {
     }
 });
 
+
+
 displayContainer.addEventListener('mouseover', (e) => {
-    if (e.target.classList.value === 'beers') {
+    if (e.target.classList.contains('beers') && e.target.children[1]) {
         const divTarget = e.target;
         const colours = ['#ffc6c6', '#cae4ff', '#c4ffc4', '#ffffa6', '#ff91ff', '#ffc993', '#8a8aff', '#4fff4f']
         let newColor = Math.floor(Math.random() * colours.length)
         divTarget.style.backgroundColor = colours[newColor]
-        console.log(divTarget);
+        console.log(e.target.children);
     }
 })
 
@@ -52,6 +54,7 @@ displayContainer.addEventListener('mouseout', (e) => {
     if (e.target.classList.value === 'beers') {
         const divTarget = e.target;
         divTarget.style.backgroundColor = 'white'
+        console.log('leave');
     }
 })
 
@@ -121,9 +124,7 @@ async function searchBeer(search) {
         setTimeout(() => {
             location.reload()
         }, 5000);
-        // window.location.reload(false);
     }
-
 }
 
 // returns beer from specific beer ID 
@@ -153,17 +154,17 @@ function addBeerToDOM(beer) {
             </div>
             <div class="recipe-content"> 
                 <div class="recipe-details">   
-                    <h3 class="h3-heading">${ beer.name}</h3> <span class="number-font">ABV : ${beer.abv}</span>
+                    <h3 class="heading_3">${ beer.name}</h3> <span class="number-font">ABV : ${beer.abv}</span>
                         <p class="recipe-font">Brewers Tips : ${beer.brewers_tips}</p>
                         <p class="recipe-font">Description : ${beer.description}</p>
                 </div>
                 <div class="recipe-method">
-                    <h4 class="h4-heading">Fermentation</h4>
-                        <p>${fermentation.value} ${fermentation.unit}</p>
-                    <h4 class="h4-heading">Mash</h4>
-                        <p>${mash.temp.value} ${mash.temp.unit} @ ${mash.duration} mins</p>
+                    <h4 class="heading_4">Fermentation</h4>
+                        <p class="recipe-font">${fermentation.value} ${fermentation.unit}</p>
+                    <h4 class="heading_4">Mash</h4>
+                        <p class="recipe-font">${mash.temp.value} ${mash.temp.unit} @ ${mash.duration} mins</p>
                     <div class="method">
-                        <h4 class="h4-heading">Method</h4>
+                        <h4 class="heading_4">Method</h4>
                             <p class="recipe-font">Boil Volume : ${beer.boil_volume.value} ${beer.boil_volume.unit}</p>
                             <p class="recipe-font">EBC : ${beer.ebc}</p>
                             <p class="recipe-font">IBU : ${beer.ibu}</p>
@@ -174,13 +175,12 @@ function addBeerToDOM(beer) {
                             <p class="recipe-font">Volume : ${beer.volume.value} ${beer.volume.unit}</p>
                     </div>
                     <div class="food-pairing">
-                        <h4 class="h4-heading">Food Pairing</h4>
+                        <h4 class="heading_4">Food Pairing</h4>
                             <p class="recipe-font">${beer.food_pairing[0]}</p>
                             <p class="recipe-font">${beer.food_pairing[1]}</p>
                             <p class="recipe-font">${beer.food_pairing[2]}</p>
                     </div>
                 </div>
-
             </div>        
         </div    
             `
@@ -188,11 +188,11 @@ function addBeerToDOM(beer) {
     // HOPS
     const hopsDiv = document.createElement('div')
     hopsDiv.classList.add('hops-div')
-    hopsDiv.innerHTML = '<h3 class="h3-heading">Hops</h3>'
+    hopsDiv.innerHTML = '<h3 class="heading_3">Hops</h3>'
     // MALTS
     const maltsDiv = document.createElement('div')
     maltsDiv.classList.add('malts-div')
-    maltsDiv.innerHTML = '<h3 class="h3-heading">Malts</h3>'
+    maltsDiv.innerHTML = '<h3 class="heading_3">Malts</h3>'
 
     // add hops ingredients to DOM
     const hops = beer.ingredients.hops
@@ -214,7 +214,7 @@ function addBeerToDOM(beer) {
     const yeastDiv = document.createElement('div')
     yeastDiv.classList.add('yeast-div')
     yeastDiv.innerHTML = `
-     <h3 class="h3-heading">Yeast</h3>
+     <h3 class="heading_3">Yeast</h3>
         <p class="recipe-font">${beer.ingredients.yeast}</p>`
 
     // append ing divs to beerRecipe div

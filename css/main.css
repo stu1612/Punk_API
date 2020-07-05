@@ -111,10 +111,57 @@ button {
   text-transform: uppercase;
 }
 
+.heading_3 {
+  font-family: "Oswald", sans-serif;
+  color: #111111;
+  font-weight: 800;
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+.heading_4 {
+  font-family: "Oswald", sans-serif;
+  color: #111111;
+  font-weight: 300;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+}
+
+.primary-font {
+  font-family: "Oswald", sans-serif;
+  color: #111111;
+  font-weight: 200;
+  font-size: 2rem;
+}
+
+.number-font {
+  font-family: "Poppins", sans-serif;
+  color: #DDDDDD;
+  font-weight: 900;
+  font-size: 8rem;
+  position: absolute;
+  top: 10%;
+  right: 0;
+}
+
+.recipe-font {
+  font-family: "Poppins", sans-serif;
+  color: #111111;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.recipe-list {
+  font-family: "Poppins", sans-serif;
+  color: #111111;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
 input {
   font-family: "Poppins", sans-serif;
-  color: black;
-  font-weight: 400;
+  color: #111111;
+  font-weight: 200;
   font-size: 2rem;
 }
 
@@ -138,11 +185,13 @@ input {
   text-align: center;
   position: relative;
   border-bottom: 1px solid #DDDDDD;
+  position: relative;
 }
 
 .beers img {
   width: 35%;
   height: 22rem;
+  pointer-events: none;
 }
 
 .white {
@@ -256,6 +305,15 @@ input[type=text] {
     width: 100%;
   }
 }
+.recipeID-container {
+  position: relative;
+}
+
+.beer-recipe {
+  display: flex;
+  flex-direction: column;
+}
+
 .submit-btn {
   font-family: "Oswald", sans-serif;
   color: white;
@@ -277,12 +335,13 @@ input[type=text] {
 }
 
 .recipe-btn {
-  font-family: "poppins", sans-serif;
+  font-family: "Oswald", sans-serif;
+  color: #111111;
+  font-weight: 300;
   font-size: 2rem;
-  color: white;
   text-transform: uppercase;
   padding: 1rem;
-  background: linear-gradient(to right, #434343 0%, black 100%);
+  background: rgba(124, 88, 88, 0.4);
   opacity: 0.7;
   transition: 0.5s;
   width: 100%;
@@ -296,6 +355,6 @@ input[type=text] {
 }
 
 .recipe-btn:hover {
-  background: white;
-  color: black;
+  background: linear-gradient(to right, #434343 0%, black 100%);
+  color: #ffffff;
 }

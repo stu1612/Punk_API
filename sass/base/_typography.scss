@@ -12,6 +12,35 @@
     text-transform: uppercase;
 }
 
+.heading_3 {
+    @include heading($black, 800, 4rem);
+    text-transform: uppercase;
+}
+
+.heading_4 {
+    @include heading($black, 300, 3.5rem);
+    text-transform: uppercase;
+}
+
+.primary-font {
+    @include heading($black, 200, 2rem);
+}
+
+.number-font {
+    @include text($silver, 900, 8rem);
+    position: absolute;
+    top: 10%;
+    right: 0;
+}
+
+.recipe-font {
+    @include text($black, 300, 2rem);
+}
+
+.recipe-list {
+    @include text($black, 300, 2rem);
+}
+
 input {
-    @include text(black, 400, 2rem);
+    @include text($black, 200, 2rem);
 }
